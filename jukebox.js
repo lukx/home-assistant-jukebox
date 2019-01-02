@@ -27,6 +27,10 @@ class JukeboxCard extends HTMLElement {
         this._tabs.addEventListener('iron-activate', (e) => this.onSpeakerSelect(e.detail.item.entityId));
 
         this.config.entities.forEach(entityId => {
+            if (!hass.states[entityId]) {
+                console.log('Jukebox: No State for entity', entityId);
+                return;
+            }
             this._tabs.appendChild(this.buildSpeakerSwitch(entityId, hass));
         });
 
@@ -199,7 +203,7 @@ class JukeboxCard extends HTMLElement {
      */
     findFirstPlayingIndex(hass) {
         return Math.max(0, this.config.entities.findIndex(entityId => {
-            return hass.states[entityId].state === 'playing';
+            return hass.states[entityId] && hass.states[entityId].state === 'playing';
         }));
     }
 
@@ -207,7 +211,7 @@ class JukeboxCard extends HTMLElement {
         const entity = hass.states[entityId];
 
         const btn = document.createElement('paper-tab');
-        btn.entityId = entityId;
+        btn.entityId = entityId;        
         btn.innerText = hass.states[entityId].attributes.friendly_name;
         return btn;
     }

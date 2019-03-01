@@ -171,7 +171,7 @@ class JukeboxCard extends HTMLElement {
     }
 
     buildStationSwitch(name, url) {
-        const btn = document.createElement('paper-button');
+        const btn = document.createElement('mwc-button');
         btn.stationUrl = url;
         btn.className = 'juke-toggle';
         btn.innerText = name;
@@ -270,7 +270,12 @@ function getStyle() {
         padding: 10px 20px;
     }
     
-    paper-button.juke-toggle[raised] {
+    mwc-button.juke-toggle {
+        --mdc-theme-primary: var(--primary-text-color);
+    }
+    
+    mwc-button.juke-toggle[raised] {
+        --mdc-theme-primary: var(--primary-color);
         background-color: var(--primary-color);
         color: var(--text-primary-color);
     }

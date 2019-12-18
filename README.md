@@ -66,3 +66,9 @@ views:
       - media_player.wuerfel_wohnzimmer
       - media_player.wuerfel_kueche
 ```
+
+```yaml
+resources:
+  - url: /community_plugin/jukebox/jukebox.js
+    type: module
+```

@@ -1,5 +1,5 @@
 {
-    "name": "Media Player Jukebox",
+    "name": "Lovelace Jukebox Card",
     "render_readme": true,
-    "filename": "jukebox.js"
+    "filename": "jukebox-card.js"
 }

@@ -10,7 +10,7 @@ You can send different media to different players, which makes it usable for mul
 to some *Frozen*, while you're Jazzing in the Kitchen. Volume-Level is handled separately, too.
 
 ## Screenshot
-![See the jukebox in action](./screenshot.png)
+![alt text](https://github.com/lukx/home-assistant-jukebox/blob/master/screenshot.png?raw=true "See the jukebox in action")
 
 ## Acknowledgement
 Apart from the home-assistant project, I need to say thanks to User [Bob_NL](https://community.home-assistant.io/u/Bob_NL)

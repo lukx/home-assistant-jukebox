@@ -40,9 +40,10 @@ See this example setting a couple of Web radios to my two chromecast players.
 
 *Excerpt of ui-lovelace.yaml*
 ```
-resources:
-  - url: /local/jukebox.js
-    type: module
+resources:  
+  - type: module
+    url: /local/jukebox.js?v=1
+    
 views:
 - name: Example
   cards:

@@ -64,7 +64,7 @@ class JukeboxCard extends HTMLElement {
         const volumeContainer = document.createElement('div');
         volumeContainer.className = 'volume center horizontal layout';
 
-        const muteButton = document.createElement('paper-icon-button');
+        const muteButton = document.createElement('ha-icon-button');
         muteButton.icon = 'hass:volume-high';
         muteButton.isMute = false;
         muteButton.addEventListener('click', this.onMuteUnmute.bind(this));
@@ -75,7 +75,7 @@ class JukeboxCard extends HTMLElement {
         slider.addEventListener('change', this.onChangeVolumeSlider.bind(this));
         slider.className = 'flex';
 
-        const stopButton = document.createElement('paper-icon-button')
+        const stopButton = document.createElement('ha-icon-button')
         stopButton.icon = 'hass:stop';
         stopButton.setAttribute('disabled', true);
         stopButton.addEventListener('click', this.onStop.bind(this));

@@ -1,4 +1,4 @@
-# Media Player Jukebox for Home-Assistant
+# Jukebox Card for Home-Assistant
 
 This is a media player UI for Home-Assistant leveraging the potential of the excellent new
 [Lovelace UI.](https://www.home-assistant.io/lovelace/)
@@ -10,7 +10,7 @@ You can send different media to different players, which makes it usable for mul
 to some *Frozen*, while you're Jazzing in the Kitchen. Volume-Level is handled separately, too.
 
 ## Screenshot
-![See the jukebox in action](./screenshot.png)
+![alt text](https://github.com/lukx/home-assistant-jukebox/blob/master/screenshot.png?raw=true "See the jukebox in action")
 
 ## Acknowledgement
 Apart from the home-assistant project, I need to say thanks to User [Bob_NL](https://community.home-assistant.io/u/Bob_NL)
@@ -30,7 +30,7 @@ Grab a copy of [jukebox.js](./jukebox.js) and save it into your home-assistant's
 ```
 - /.homeassistant
 |___ /configuration.yaml
-|___ /www/jukebox.js
+|___ /www/jukebox-card.js
 ```
 
 
@@ -41,7 +41,7 @@ See this example setting a couple of Web radios to my two chromecast players.
 *Excerpt of ui-lovelace.yaml*
 ```
 resources:
-  - url: /local/jukebox.js
+  - url: /local/jukebox-card.js
     type: module
 views:
 - name: Example
@@ -65,4 +65,10 @@ views:
     entities:
       - media_player.wuerfel_wohnzimmer
       - media_player.wuerfel_kueche
+```
+
+```yaml
+resources:
+  - url: /community_plugin/jukebox-card/jukebox-card.js
+    type: module
 ```

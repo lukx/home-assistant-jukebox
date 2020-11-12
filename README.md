@@ -19,19 +19,15 @@ available to all of us in the Home-Assistant forums. This jukebox is heavily der
 people in the thread.
 
 ## Usage
-### Preparation
-This will take time, but do set up your home-assistant to use the new [Lovelace](https://www.home-assistant.io/lovelace/)
-frontend, if you're not using it yet.
+### Installation using HACS
+I recommend using [HACS](https://hacs.xyz/) to install and update this integration. As the jukebox card is not yet in the official repositories of HACS, follow these steps to get it running:
 
-### Installation
-Grab a copy of [jukebox.js](./jukebox.js) and save it into your home-assistant's configuration, in a folder called
-"www". So:
-
-```
-- /.homeassistant
-|___ /configuration.yaml
-|___ /www/jukebox-card.js
-```
+* (Install HACS if you have not already; look into their documentation in the link above to achieve this)
+* In your Home Assistant, open the HACS panel
+* Click on "Frontend" to see the list of Frontend (or "Lovelace") integrations
+* On the top right of your screen, click on the three dots to see "Custom Repositories"
+* in the "Custom Repositories" dialogue, paste `https://github.com/lukx/home-assistant-jukebox.git` in the "custom repository URL" box, and select "Lovelace" as the Category.
+* Now, in the Frontend Category, search for "Jukebox" and install this module like you would install any other module.
 
 
 ### Configuration
@@ -41,7 +37,7 @@ See this example setting a couple of Web radios to my two chromecast players.
 *Excerpt of ui-lovelace.yaml*
 ```
 resources:
-  - url: /local/jukebox-card.js
+  - url: /hacsfiles/home-assistant-jukebox/jukebox-card.js
     type: module
 views:
 - name: Example
@@ -65,10 +61,4 @@ views:
     entities:
       - media_player.wuerfel_wohnzimmer
       - media_player.wuerfel_kueche
-```
-
-```yaml
-resources:
-  - url: /community_plugin/jukebox-card/jukebox-card.js
-    type: module
 ```

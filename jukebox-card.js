@@ -69,7 +69,7 @@ class JukeboxCard extends HTMLElement {
         muteButton.isMute = false;
         muteButton.addEventListener('click', this.onMuteUnmute.bind(this));
 
-        const slider = document.createElement('ha-paper-slider');
+        const slider = document.createElement('ha-slider');
         slider.min = 0;
         slider.max = 100;
         slider.addEventListener('change', this.onChangeVolumeSlider.bind(this));

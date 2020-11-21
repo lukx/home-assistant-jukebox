@@ -65,7 +65,7 @@ views:
       - media_player.wuerfel_kueche
 ```
 
-#### Using lovlace UI
+#### Using lovelace UI
 * Go to the view you want to add the card, switch it to edit mode and click `+ add card`
 * Scroll all the way down and select `Manual`
 * Paste your config and save

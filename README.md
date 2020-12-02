@@ -34,6 +34,8 @@ I recommend using [HACS](https://hacs.xyz/) to install and update this integrati
 Find stream URLs, e.g. on [Radio-Browser.info](http://www.radio-browser.info/gui/#/)
 See this example setting a couple of Web radios to my two chromecast players.
 
+#### Using lovlace in yaml mode
+
 *Excerpt of ui-lovelace.yaml*
 ```
 resources:
@@ -61,4 +63,33 @@ views:
     entities:
       - media_player.wuerfel_wohnzimmer
       - media_player.wuerfel_kueche
+```
+
+#### Using lovelace UI
+* Go to the view you want to add the card, switch it to edit mode and click `+ add card`
+* Scroll all the way down and select `Manual`
+* Paste your config and save
+
+Example config (note the differances from the above example):
+```
+type: "custom:jukebox-card"
+links:
+  - url: http://streams.greenhost.nl:8080/jazz
+    name: Concertzender Jazz
+  - url: http://fs-insidejazz.fast-serv.com:8282/;stream.nsv
+    name: Inside Jazz
+  - url: http://stream.srg-ssr.ch/m/rsj/mp3_128
+    name: Radio Swiss Jazz
+  - url: http://stream.beachlatinoradio.com:8030/;?d=
+    name: Beach Latino Radio
+  - url: http://streams.calmradio.com/api/43/128/stream/;?d=
+    name: Calm Radio
+  - url: http://swr-swr1-bw.cast.addradio.de/swr/swr1/bw/mp3/128/stream.mp3
+    name: SWR 1
+  - url: http://94.23.252.14:8067/stream
+    name: Nature Sounds
+entities:
+  - media_player.wuerfel_wohnzimmer
+  - media_player.wuerfel_kueche
+
 ```

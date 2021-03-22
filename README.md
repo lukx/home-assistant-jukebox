@@ -33,6 +33,7 @@ I recommend using [HACS](https://hacs.xyz/) to install and update this integrati
 ### Configuration
 Find stream URLs, e.g. on [Radio-Browser.info](http://www.radio-browser.info/gui/#/)
 See this example setting a couple of Web radios to my two chromecast players.
+A logo can be added (optional) and will be displayed on target media player lovelace card (as album cover).
 
 #### Using lovlace in yaml mode
 
@@ -50,6 +51,9 @@ views:
         name: Concertzender Jazz
       - url: http://fs-insidejazz.fast-serv.com:8282/;stream.nsv
         name: Inside Jazz
+      - url: http://icecast.radiofrance.fr/franceinfo-midfi.mp3
+        name: France Info
+        logo: https://upload.wikimedia.org/wikipedia/fr/thumb/1/18/France_Info_-_2008.svg/768px-France_Info_-_2008.svg.png
       - url: http://stream.srg-ssr.ch/m/rsj/mp3_128
         name: Radio Swiss Jazz
       - url: http://stream.beachlatinoradio.com:8030/;?d=
@@ -78,6 +82,9 @@ links:
     name: Concertzender Jazz
   - url: http://fs-insidejazz.fast-serv.com:8282/;stream.nsv
     name: Inside Jazz
+  - url: http://icecast.radiofrance.fr/franceinfo-midfi.mp3
+    name: France Info
+    logo: https://upload.wikimedia.org/wikipedia/fr/thumb/1/18/France_Info_-_2008.svg/768px-France_Info_-_2008.svg.png
   - url: http://stream.srg-ssr.ch/m/rsj/mp3_128
     name: Radio Swiss Jazz
   - url: http://stream.beachlatinoradio.com:8030/;?d=

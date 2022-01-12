@@ -68,9 +68,9 @@ class JukeboxCard extends HTMLElement {
         muteButton.icon = 'hass:volume-high';
         muteButton.isMute = false;
         muteButton.addEventListener('click', this.onMuteUnmute.bind(this));
-		const mbIcon = document.createElement('ha-icon');
-		mbIcon.icon = 'hass:volume-high';
-		muteButton.appendChild(mbIcon);
+	const mbIcon = document.createElement('ha-icon');
+	mbIcon.icon = 'hass:volume-high';
+	muteButton.appendChild(mbIcon);
 
         const slider = document.createElement('ha-slider');
         slider.min = 0;
@@ -82,9 +82,9 @@ class JukeboxCard extends HTMLElement {
         stopButton.icon = 'hass:stop';
         stopButton.setAttribute('disabled', true);
         stopButton.addEventListener('click', this.onStop.bind(this));
-		const sbIcon = document.createElement('ha-icon');
-		sbIcon.icon = 'hass:stop';
-		stopButton.appendChild(sbIcon);
+	const sbIcon = document.createElement('ha-icon');
+	sbIcon.icon = 'hass:stop';
+	stopButton.appendChild(sbIcon);
 
 
         this._hassObservers.push(hass => {

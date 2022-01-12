@@ -49,7 +49,7 @@ class JukeboxCard extends HTMLElement {
         stationList.classList.add('station-list');
 
         this.config.links.forEach(linkCfg => {
-            const stationButton = this.buildStationSwitch(linkCfg.name, linkCfg.url)
+            const stationButton = this.buildStationSwitch(linkCfg.name, linkCfg.url, linkCfg.logo )
             this._stationButtons.push(stationButton);
             stationList.appendChild(stationButton);
         });
@@ -176,9 +176,11 @@ class JukeboxCard extends HTMLElement {
         })
     }
 
-    buildStationSwitch(name, url) {
+    buildStationSwitch(name, url, logo) {
         const btn = document.createElement('mwc-button');
         btn.stationUrl = url;
+		btn.stationName = name;
+		btn.stationLogo = logo;
         btn.className = 'juke-toggle';
         btn.innerText = name;
         btn.addEventListener('click', this.onStationSelect.bind(this));
@@ -189,7 +191,17 @@ class JukeboxCard extends HTMLElement {
         this.hass.callService('media_player', 'play_media', {
             entity_id: this._selectedSpeaker,
             media_content_id: e.currentTarget.stationUrl,
-            media_content_type: 'audio/mp4'
+            media_content_type: 'audio/mp4',
+			extra: {
+				metadata: {
+				  metadataType: 3,
+				  title: e.currentTarget.stationName,
+				  artist: "Live Radio",
+				  images: [ 
+					{ url: e.currentTarget.stationLogo }
+				  ]
+				}
+			}
         });
     }
 
